@@ -6,7 +6,7 @@ import {
 } from '../action_types';
 
 const initialState = {
-  data: {},
+  data: [],
   isLoading: false,
   isError: false
 };
@@ -28,7 +28,7 @@ const gistsReducer = (state = initialState, action) => {
     case SET_GISTS:
       return {
         ...state,
-        data: payload.user,
+        data: payload,
         loading: false
       };
     case REMOVE_GISTS:

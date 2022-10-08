@@ -5,7 +5,7 @@ export default function SearchGist() {
   return (
     <div>
       <div className={classes.box}>
-        <SearchInput />
+        <SearchInput origin={"SEARCH_PAGE"} />
       </div>
     </div>
   );

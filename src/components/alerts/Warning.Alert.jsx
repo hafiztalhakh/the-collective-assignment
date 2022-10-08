@@ -1,9 +1,8 @@
 import Swal from "sweetalert2";
 
-export default function Error(err) {
-  console.log(err);
+export default function Warning(err) {
   return Swal.fire({
-    icon: "error",
+    icon: "warning",
     title: err ? err : "Something went wrong",
     showConfirmButton: false,
     timer: 2000,

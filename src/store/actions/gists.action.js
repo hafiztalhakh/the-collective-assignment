@@ -17,7 +17,12 @@ export const setLoading = (payload) => async (dispatch) => {
 export const getGists = (username) => async (dispatch) => {
   try {
     const { data } = await fetchAllGists(username);
-    console.log(data)
+    if (data?.length > 0) {
+      dispatch({
+        type: SET_GISTS,
+        payload: data
+      })
+    }
   } catch (error) {
     ErrorAlert(error?.response?.data?.message);
     dispatch(setLoading(false));

@@ -1,9 +1,9 @@
-import 'src/App.css';
 import AppRoutes from "src/routes";
-
+import Header from "src/components/header";
 function App() {
   return (
-    <div className="App">
+    <div>
+      <Header heading={"Search Gists"} />
       <AppRoutes />
     </div>
   );

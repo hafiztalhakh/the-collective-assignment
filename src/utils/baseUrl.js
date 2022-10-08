@@ -1,1 +1,1 @@
-// base URL here
+export const BASE_URL = "https://api.github.com";

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { getGists } from "src/store";
 import classes from "./index.module.css";
 
 export default function SearchInput() {
+  const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState("");
 
   const handlChange = (e) => {
@@ -9,7 +12,7 @@ export default function SearchInput() {
   };
 
   const handlSubmit = () => {
-    alert(inputValue);
+    dispatch(getGists(inputValue));
     setInputValue("");
   };
 

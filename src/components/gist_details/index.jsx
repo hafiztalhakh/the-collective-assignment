@@ -3,12 +3,10 @@ import PropTypes from "prop-types";
 import classes from "src/components/gist_details/index.module.css";
 
 function GistDetails({ loading, data }) {
-  console.log(data);
-
   if (loading) {
     return (
       <div>
-        <p style={{ textAlign: "center" }}>Loading...</p>
+        <p className="text-center">Loading...</p>
       </div>
     );
   }

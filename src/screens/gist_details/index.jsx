@@ -1,13 +1,13 @@
 import React, { useEffect, memo } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import GistDetailsCard from "src/components/gist_details";
-import classes from "src/screens/gists_list/index.module.css";
 import { getGistDetails } from "src/store";
+import classes from "src/screens/gists_list/index.module.css";
 
 function GistDetails() {
-  const dispatch = useDispatch();
   const { id } = useParams();
+  const dispatch = useDispatch();
   const gists = useSelector((store) => store.gists);
 
   useEffect(() => {

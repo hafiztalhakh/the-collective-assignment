@@ -13,3 +13,7 @@ code {
 .list-unstyle {
   list-style: none;
 }
+
+.text-center {
+  text-align: center;
+}

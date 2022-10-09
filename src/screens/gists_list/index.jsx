@@ -23,7 +23,7 @@ function GistsList() {
       <SearchInput origin="GIST_LIST" />
       {gists?.isLoading ? (
         <div>
-          <p style={{ textAlign: "center" }}>Loading...</p>
+          <p className="text-center">Loading...</p>
         </div>
       ) : (
         <>

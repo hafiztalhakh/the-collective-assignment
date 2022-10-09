@@ -45,7 +45,7 @@ const Files = ({ files }) => {
       <p className={classes.subTitle}>Files:</p>
       <ul className={classes.dInlineBlock}>
         {Object.values(files).map((el) => (
-          <li className={`list-unstyle ${classes.file}`}>
+          <li key={el?.filename} className={`list-unstyle ${classes.file}`}>
             <a href={el?.raw_url} target="_blank">
               {el?.filename}
             </a>
@@ -63,7 +63,7 @@ const Forks = ({ forks }) => {
       {forks?.length > 0 ? (
         <ul className={classes.dInlineBlock}>
           {forks?.slice(0, 3)?.map((el) => (
-            <li className={`list-unstyle ${classes.dInlineBlock} ${classes.avatarBox}`}>
+            <li key={el?.id} className={`list-unstyle ${classes.dInlineBlock} ${classes.avatarBox}`}>
               <Avatar imageUrl={el?.user?.avatar_url} name={el?.user?.login} />
               <a href={`https://gist.github.com/${el.id}`} target="_blank">
                 {el?.user?.login}

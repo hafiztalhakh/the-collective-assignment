@@ -38,7 +38,7 @@ export const getGists = (username) => async (dispatch) => {
       dispatch(setGistLoading(false));
     }
   } catch (error) {
-    ErrorAlert("Some problem while making call");
+    ErrorAlert("Something went wrong");
     dispatch(setError(error))
     dispatch(setGistLoading(false));
   }
@@ -56,7 +56,7 @@ export const getGistDetails = (id) => async (dispatch) => {
       dispatch(setLoading(false));
     }
   } catch (error) {
-    ErrorAlert("Some problem while making call");
+    ErrorAlert("Something went wrong");
     dispatch(setError(error));
     dispatch(removeGists())
     dispatch(setLoading(false));

@@ -2,7 +2,7 @@ import React, { useEffect, memo } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import GistDetailsCard from "src/components/gist_details";
-import { getGistDetails } from "src/store";
+import { getGistDetails, setLoading } from "src/store";
 import classes from "src/screens/gists_list/index.module.css";
 
 function GistDetails() {
@@ -14,6 +14,10 @@ function GistDetails() {
     if (id) {
       dispatch(getGistDetails(id));
     }
+
+    return () => {
+      dispatch(setLoading(true));
+    };
   }, [id]);
 
   return (

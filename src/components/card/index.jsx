@@ -11,7 +11,9 @@ function Card({ data }) {
       </p>
       <ul className={classes.dInlineBlock}>
         {Object.values(data?.files).map((el) => (
-          <li className={`${classes.badge} list-unstyle`}>{el?.language}</li>
+          <li key={el?.language} className={`${classes.badge} list-unstyle`}>
+            {el?.language}
+          </li>
         ))}
       </ul>
     </div>

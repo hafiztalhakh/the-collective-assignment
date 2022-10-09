@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import SearchInput from "src/components/search_bar";
 import Card from "src/components/card";
 import classes from "src/screens/gists_list/index.module.css";
-import { getGists } from "src/store";
+import { getGists, setGistLoading } from "src/store";
 
 function GistsList() {
   const dispatch = useDispatch();
@@ -16,6 +16,10 @@ function GistsList() {
     if (param) {
       dispatch(getGists(param));
     }
+
+    return () => {
+      dispatch(setGistLoading(true));
+    };
   }, [location, param]);
 
   return (

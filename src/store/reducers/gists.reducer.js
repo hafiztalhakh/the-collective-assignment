@@ -12,7 +12,8 @@ const initialState = {
   details: {},
   isLoading: true,
   loading: true,
-  isError: false
+  isError: false,
+  errorMessage: ""
 };
 
 const gistsReducer = (state = initialState, action) => {
@@ -28,7 +29,10 @@ const gistsReducer = (state = initialState, action) => {
     case SET_ERROR:
       return {
         ...state,
-        isError: payload
+        isError: true,
+        errorMessage: payload,
+        data: [],
+        details: {}
       };
     case SET_GIST_LOADING:
       return {
@@ -50,7 +54,8 @@ const gistsReducer = (state = initialState, action) => {
     case REMOVE_GISTS:
       return {
         ...state,
-        data: []
+        data: [],
+        details: {}
       };
     default:
       return { ...state };

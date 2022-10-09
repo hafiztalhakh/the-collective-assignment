@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ROUTES from "./config";
 
 function AppRoutes() {
-  console.log("ROUTES")
   return (
     <Router basename="/">
       <Routes>

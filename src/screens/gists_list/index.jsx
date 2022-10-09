@@ -18,8 +18,6 @@ function GistsList() {
     }
   }, [location, param]);
 
-  // console.log("[GISTS]:", { gists });
-
   return (
     <div className={classes.container}>
       <SearchInput origin="GIST_LIST" />
@@ -40,7 +38,7 @@ function GistsList() {
             <hr />
           </div>
           {gists?.data?.length > 0 &&
-            gists?.data?.map((gist, index) => {
+            gists?.data?.map((gist) => {
               return <Card key={gist.id} data={gist} />;
             })}
         </>

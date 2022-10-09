@@ -62,16 +62,20 @@ const Forks = ({ forks }) => {
   return (
     <div className={classes.box}>
       <p className={classes.subTitle}>Forks:</p>
-      <ul className={classes.dInlineBlock}>
-        {forks?.slice(0, 3)?.map((el) => (
-          <li className={`list-unstyle ${classes.dInlineBlock} ${classes.avatarBox}`}>
-            <Avatar imageUrl={el?.user?.avatar_url} name={el?.user?.login} />
-            <a href={`https://gist.github.com/${el.id}`} target="_blank">
-              {el?.user?.login}
-            </a>
-          </li>
-        ))}
-      </ul>
+      {forks?.length > 0 ? (
+        <ul className={classes.dInlineBlock}>
+          {forks?.slice(0, 3)?.map((el) => (
+            <li className={`list-unstyle ${classes.dInlineBlock} ${classes.avatarBox}`}>
+              <Avatar imageUrl={el?.user?.avatar_url} name={el?.user?.login} />
+              <a href={`https://gist.github.com/${el.id}`} target="_blank">
+                {el?.user?.login}
+              </a>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className={classes.dInlineBlock}>No Forks</p>
+      )}
     </div>
   );
 };

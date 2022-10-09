@@ -2,9 +2,9 @@
 
 This project created for The Collective as an Interview Test. Application entertain the visitor to search any Gist of any Github user by entering username of that user. Application incluedes the following: 
 
-  ✔️ (Search) When a user enters a user name, it should be able to get a full list of public gists by that user.
-  ✔️ (Filetype) Convert the file types of the files in the gist into a tag/badge e.g. if the returned gist has a list of files containing python and javascript files,         the gist should have the respective tags/badges.
-  ✔️ (Forks) Username/avatar of the last 3 users who forked it with an avatar linking to the fork.
+  ✔️ (Search) When a user enters a user name, it should be able to get a full list of public gists by that user.\
+  ✔️ (Filetype) Convert the file types of the files in the gist into a tag/badge e.g. if the returned gist has a list of files containing python and javascript files,         the gist should have the respective tags/badges.\
+  ✔️ (Forks) Username/avatar of the last 3 users who forked it with an avatar linking to the fork.\
   
 ## Getting Started 
   

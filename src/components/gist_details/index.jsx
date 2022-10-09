@@ -12,7 +12,7 @@ function GistDetails({ loading, data }) {
   }
 
   return (
-    <div key={data?.id} className={classes.card}>
+    <div className={classes.card}>
       <div className={classes.justfySpaceBetween}>
         <div className={classes.box}>
           <Avatar imageUrl={data?.owner?.avatar_url} name={data?.owner?.login} />
@@ -21,7 +21,9 @@ function GistDetails({ loading, data }) {
 
         <ul className={classes.dInlineBlock}>
           {Object.values(data?.files).map((el) => (
-            <li className={`${classes.badge} list-unstyle`}>{el?.language}</li>
+            <li key={el?.language} className={`${classes.badge} list-unstyle`}>
+              {el?.language}
+            </li>
           ))}
         </ul>
       </div>
@@ -46,7 +48,7 @@ const Files = ({ files }) => {
       <ul className={classes.dInlineBlock}>
         {Object.values(files).map((el) => (
           <li key={el?.filename} className={`list-unstyle ${classes.file}`}>
-            <a href={el?.raw_url} target="_blank">
+            <a href={el?.raw_url} target="_blank" rel="noreferrer">
               {el?.filename}
             </a>
           </li>
@@ -57,6 +59,8 @@ const Files = ({ files }) => {
 };
 
 const Forks = ({ forks }) => {
+  const GIST_URL = process.env.REACT_APP_GIST_URL;
+
   return (
     <div className={classes.box}>
       <p className={classes.subTitle}>Forks:</p>
@@ -65,7 +69,7 @@ const Forks = ({ forks }) => {
           {forks?.slice(0, 3)?.map((el) => (
             <li key={el?.id} className={`list-unstyle ${classes.dInlineBlock} ${classes.avatarBox}`}>
               <Avatar imageUrl={el?.user?.avatar_url} name={el?.user?.login} />
-              <a href={`https://gist.github.com/${el.id}`} target="_blank">
+              <a href={`${GIST_URL}/${el.id}`} target="_blank" rel="noreferrer">
                 {el?.user?.login}
               </a>
             </li>

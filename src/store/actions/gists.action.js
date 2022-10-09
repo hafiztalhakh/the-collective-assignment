@@ -18,19 +18,9 @@ export const getGists = (username) => async (dispatch) => {
     dispatch(setLoading(true));
     const { data } = await fetchAllGists(username);
     if (data?.length > 0) {
-      const gistsData = await Promise.all(
-        data.map(async (el) => {
-          const { data } = await fetchGistDetails(el?.id);
-          let tempForks = []
-          if (data?.length > 0) {
-            tempForks = data?.forks?.length > 0 ? data?.forks : []
-          }
-          return { ...el, forks: tempForks }
-        })
-      );
       dispatch({
         type: SET_GISTS,
-        payload: gistsData
+        payload: data
       })
     } else {
       dispatch(setLoading(false));

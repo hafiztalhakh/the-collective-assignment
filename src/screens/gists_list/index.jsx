@@ -5,7 +5,6 @@ import SearchInput from "src/components/search_bar";
 import Card from "src/components/card";
 import classes from "src/screens/gists_list/index.module.css";
 import { getGists } from "src/store";
-import { fetchGistDetails } from "src/services/gists";
 
 function GistsList() {
   const dispatch = useDispatch();
@@ -31,12 +30,18 @@ function GistsList() {
       ) : (
         <>
           <div>
-            {gists?.data?.length > 0 ? <h2> {gists?.data?.length} gist results</h2> : <h2>No result found</h2>}
+            {gists?.data?.length > 0 ? (
+              <h2>
+                {gists?.data?.length} gist results found for {param}
+              </h2>
+            ) : (
+              <h2>No result found</h2>
+            )}
             <hr />
           </div>
           {gists?.data?.length > 0 &&
             gists?.data?.map((gist, index) => {
-              return <Card key={index} data={gist} />;
+              return <Card key={gist.id} data={gist} />;
             })}
         </>
       )}

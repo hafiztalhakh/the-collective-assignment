@@ -6,6 +6,16 @@
 
 .card ul {
   margin: 0;
+  padding-inline-start: 0;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.title {
+  font-weight: bold;
 }
 
 .dInlineBlock {

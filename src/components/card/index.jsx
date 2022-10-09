@@ -1,17 +1,30 @@
-import React from "react";
+import React, { memo } from "react";
+import PropTypes from "prop-types";
 import classes from "src/components/card/index.module.css";
 
-export default function Card() {
+function Card({ data }) {
+  console.log(data);
   return (
-    <div className={classes.card}>
-      <p className="description">No Description</p>
-      <p>Files:</p>
+    <div key={data?.id} className={classes.card}>
       <ul className={classes.dInlineBlock}>
-        <li className={`${classes.badge} list-unstyle`}>JavaScript</li>
-        <li className={`${classes.badge} list-unstyle`}>Python</li>
+        {Object.values(data?.files).map((el) => (
+          <li className={`${classes.badge} list-unstyle`}>{el?.language}</li>
+        ))}
+      </ul>
+      <p className={classes.description}>{data?.description || "No Description"}</p>
+
+      <p className={classes.title}>Files:</p>
+      <ul className={classes.dInlineBlock}>
+        {Object.values(data?.files).map((el) => (
+          <li className={`list-unstyle`}>
+            <a href={el?.raw_url} target="_blank">
+              {el?.filename}
+            </a>
+          </li>
+        ))}
       </ul>
       <br />
-      <p>Fork:</p>
+      <p className={classes.title}>Fork:</p>
       <ul className={classes.dInlineBlock}>
         <li className={`list-unstyle ${classes.dInlineBlock} ${classes.avatarBox}`}>
           <img
@@ -25,3 +38,9 @@ export default function Card() {
     </div>
   );
 }
+
+Card.propTypes = {
+  data: PropTypes.object.isRequired,
+};
+
+export default memo(Card);

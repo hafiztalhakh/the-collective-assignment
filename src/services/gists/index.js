@@ -4,3 +4,8 @@ export const fetchAllGists = (username) => {
   const url = `/users/${username}/gists`
   return getMethod(url)
 }
+
+export const fetchGistDetails = (gistId) => {
+  const url = `/gists/${gistId}`
+  return getMethod(url)
+}

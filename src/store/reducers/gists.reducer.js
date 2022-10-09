@@ -29,7 +29,7 @@ const gistsReducer = (state = initialState, action) => {
       return {
         ...state,
         data: payload,
-        loading: false
+        isLoading: false
       };
     case REMOVE_GISTS:
       return {

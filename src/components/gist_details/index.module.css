@@ -1,0 +1,76 @@
+.card {
+  border: 1px solid #1a1a1a;
+  padding: 20px 30px;
+  margin-top: 10px;
+}
+
+.card ul {
+  margin: 0;
+  padding-inline-start: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.justfySpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.normalText {
+  font-weight: normal;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-right: 10px;
+}
+
+.subTitle {
+  display: inline-flex;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.dInlineBlock {
+  display: inline-block;
+}
+
+.badge {
+  background-color: #1a1a1aab;
+  color: #fff;
+  border-radius: 7px;
+  padding: 7px;
+  margin: 3px;
+  display: inline-block;
+}
+
+.avatarBox {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.file {
+  margin: 3px;
+}
